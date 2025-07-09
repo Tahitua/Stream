@@ -1,148 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Titre plus engageant et optimisé pour le SEO -->
-    <title>Stream - Vos Séries et Films Préférés en Streaming</title>
-    <!-- Méta description pour le SEO -->
-    <meta name="description" content="Découvrez une large sélection de séries et films en streaming. Nouveautés, tendances et votre liste personnalisée sur Stream.">
-    <!-- Lien vers le fichier CSS. Assurez-vous que style.css est bien structuré. -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Optionnel : Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Optionnel : Polices d'écriture (exemple avec Google Fonts) -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
+  <meta charset="UTF-8">
+  <title>Mon Netflix Clone</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="navbar" role="banner">
-        <div class="navbar-brand">
-            <a href="/" aria-label="Page d'accueil de Stream">
-                <img src="logo.png" alt="Logo Stream" class="logo">
-            </a>
+  <header>
+    <div class="logo">MyFlix</div>
+    <nav>
+      <ul>
+        <li>Accueil</li>
+        <li>Séries</li>
+        <li>Films</li>
+        <li>Ma Liste</li>
+      </ul>
+    </nav>
+    <div class="profile"></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Film du moment</h1>
+        <p>Regardez ce film incroyable maintenant !</p>
+        <button>Lecture</button>
+        <button>Plus d'infos</button>
+      </div>
+    </section>
+
+    <section class="carousel-section">
+      <h2>Populaires sur MyFlix</h2>
+      <div class="carousel">
+        <button class="carousel-btn left">&#10094;</button>
+        <div class="carousel-track">
+          <img src="https://picsum.photos/id/1011/250/140" alt="img1">
+          <img src="https://picsum.photos/id/1015/250/140" alt="img2">
+          <img src="https://picsum.photos/id/1016/250/140" alt="img3">
+          <img src="https://picsum.photos/id/1021/250/140" alt="img4">
+          <img src="https://picsum.photos/id/1025/250/140" alt="img5">
+          <img src="https://picsum.photos/id/1027/250/140" alt="img6">
         </div>
-        <nav aria-label="Navigation principale">
-            <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/series">Séries</a></li>
-                <li><a href="/films">Films</a></li>
-                <li><a href="/nouveautes">Nouveautés</a></li>
-                <li><a href="/ma-liste">Ma Liste</a></li>
-            </ul>
-        </nav>
-        <div class="user-options">
-            <button type="button" aria-label="Rechercher" class="icon-button">
-                <!-- Remplacer par une vraie icône SVG ou une police d'icônes -->
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-            </button>
-            <button type="button" aria-label="Notifications" class="icon-button">
-                <!-- Remplacer par une vraie icône SVG ou une police d'icônes -->
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
-            </button>
-            <a href="/profil" aria-label="Profil utilisateur" class="profile-link">
-                <img src="avatar-placeholder.png" alt="Avatar utilisateur" class="user-avatar">
-            </a>
-        </div>
-    </header>
+        <button class="carousel-btn right">&#10095;</button>
+      </div>
+    </section>
+  </main>
 
-    <main id="main-content" role="main">
-        <section class="hero" aria-labelledby="hero-title">
-            <!-- Idéalement, l'image de fond serait gérée en CSS pour ce type de section -->
-            <!-- <img src="hero-banner.jpg" alt="Bannière du contenu principal" class="hero-background-image"> -->
-            <div class="hero-content">
-                <h1 id="hero-title">Nom du Film/Série Mis en Avant</h1>
-                <p>Plongez dans une aventure épique avec des effets visuels à couper le souffle et une histoire captivante.</p>
-                <div class="hero-actions">
-                    <button type="button" class="btn btn-primary btn-play">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" class="icon-play"><path d="M8 5v14l11-7z"/></svg>
-                        Lecture
-                    </button>
-                    <button type="button" class="btn btn-secondary btn-info">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" class="icon-info"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                        Plus d'infos
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-row" aria-labelledby="tendances-title">
-            <h2 id="tendances-title">Tendances actuelles</h2>
-            <div class="row-inner">
-                <!-- Exemple de miniature de contenu - Répéter ce bloc pour chaque élément -->
-                <article class="thumbnail" aria-labelledby="content-title-1">
-                    <a href="/contenu/1" aria-label="Voir les détails de Titre Contenu 1">
-                        <img src="thumbnail1.jpg" alt="Affiche de Titre Contenu 1">
-                        <!-- Pourrait être superposé sur l'image avec CSS -->
-                        <!-- <h3 id="content-title-1" class="thumbnail-title">Titre Contenu 1</h3> -->
-                    </a>
-                    <!-- Optionnel : ajouter des actions rapides comme "ajouter à ma liste" -->
-                </article>
-                <article class="thumbnail" aria-labelledby="content-title-2">
-                    <a href="/contenu/2" aria-label="Voir les détails de Titre Contenu 2">
-                        <img src="thumbnail2.jpg" alt="Affiche de Titre Contenu 2">
-                        <!-- <h3 id="content-title-2" class="thumbnail-title">Titre Contenu 2</h3> -->
-                    </a>
-                </article>
-                <article class="thumbnail" aria-labelledby="content-title-3">
-                    <a href="/contenu/3" aria-label="Voir les détails de Titre Contenu 3">
-                        <img src="thumbnail3.jpg" alt="Affiche de Titre Contenu 3">
-                        <!-- <h3 id="content-title-3" class="thumbnail-title">Titre Contenu 3</h3> -->
-                    </a>
-                </article>
-                <!-- Plus de miniatures -->
-            </div>
-        </section>
-
-        <section class="content-row" aria-labelledby="ma-liste-title">
-            <h2 id="ma-liste-title">Ma Liste</h2>
-            <div class="row-inner">
-                <article class="thumbnail" aria-labelledby="content-title-4">
-                    <a href="/contenu/4" aria-label="Voir les détails de Titre Contenu 4">
-                        <img src="thumbnail4.jpg" alt="Affiche de Titre Contenu 4">
-                        <!-- <h3 id="content-title-4" class="thumbnail-title">Titre Contenu 4</h3> -->
-                    </a>
-                </article>
-                <article class="thumbnail" aria-labelledby="content-title-5">
-                    <a href="/contenu/5" aria-label="Voir les détails de Titre Contenu 5">
-                        <img src="thumbnail5.jpg" alt="Affiche de Titre Contenu 5">
-                        <!-- <h3 id="content-title-5" class="thumbnail-title">Titre Contenu 5</h3> -->
-                    </a>
-                </article>
-                <!-- Plus de miniatures -->
-            </div>
-        </section>
-
-        <!-- Vous pouvez ajouter d'autres sections ici : Nouveautés, Parcourir par genre, etc. -->
-
-    </main>
-
-    <footer role="contentinfo">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="/faq">FAQ</a>
-                <a href="/aide">Centre d'aide</a>
-                <a href="/compte">Compte</a>
-                <a href="/presse">Presse</a>
-                <a href="/relations-investisseurs">Relations Investisseurs</a>
-                <a href="/emplois">Carrières</a>
-                <a href="/mentions-legales">Mentions légales</a>
-                <a href="/confidentialite">Confidentialité</a>
-                <a href="/preferences-cookies">Préférences de cookies</a>
-                <a href="/contact">Nous contacter</a>
-            </div>
-            <div class="social-media">
-                <!-- Icônes SVG ou polices d'icônes pour les réseaux sociaux -->
-                <a href="#" aria-label="Facebook"><svg><!-- icône Facebook --></svg></a>
-                <a href="#" aria-label="Twitter"><svg><!-- icône Twitter --></svg></a>
-                <a href="#" aria-label="Instagram"><svg><!-- icône Instagram --></svg></a>
-            </div>
-            <p class="copyright">&copy; <span id="current-year"></span> Stream. Tous droits réservés.</p>
-            <!-- Petit script pour mettre à jour l'année dynamiquement -->
-            <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
-        </div>
-    </footer>
-
-    <!-- Le script principal, chargé à la fin pour ne pas bloquer le rendu -->
-    <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
