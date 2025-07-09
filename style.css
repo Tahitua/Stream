@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  background: #141414;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+header {
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  height: 60px;
+  background: rgba(20,20,20,0.95);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e50914;
+  margin-right: 30px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav li {
+  margin-right: 20px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+nav li:hover {
+  color: #e50914;
+}
+.profile {
+  margin-left: auto;
+  width: 32px;
+  height: 32px;
+  background: #666;
+  border-radius: 50%;
+}
+.hero {
+  background: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80') center/cover;
+  height: 400px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #141414 30%, transparent 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 40px;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 0 0 10px;
+}
+.hero button {
+  margin-right: 10px;
+  background: #e50914;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 22px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.hero button:hover {
+  background: #b0060c;
+}
+.carousel-section {
+  padding: 30px 40px;
+}
+.carousel-section h2 {
+  margin-bottom: 16px;
+}
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 12px;
+}
+.carousel-track img {
+  border-radius: 4px;
+  width: 250px;
+  height: 140px;
+  object-fit: cover;
+  transition: transform 0.15s;
+  cursor: pointer;
+}
+.carousel-track img:hover {
+  transform: scale(1.08);
+}
+.carousel-btn {
+  background: rgba(20,20,20,0.5);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0 10px;
+  border-radius: 50%;
+  z-index: 2;
+  transition: background 0.2s;
+}
+.carousel-btn:hover {
+  background: #e50914;
+}
+.carousel-btn.left {
+  position: absolute;
+  left: 0;
+}
+.carousel-btn.right {
+  position: absolute;
+  right: 0;
+}
+@media (max-width: 800px) {
+  .hero { height: 250px; }
+  .carousel-track img { width: 160px; height: 90px; }
+  .carousel-section { padding: 20px 10px; }
+  header { padding: 0 10px; }
+}
